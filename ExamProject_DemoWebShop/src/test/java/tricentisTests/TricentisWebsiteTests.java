@@ -30,6 +30,7 @@ public class TricentisWebsiteTests {
 			cartPage.clearCart();
 			cartItems = homePage.cartItemsAmount();
 		}
+		
 	}
 	
 	@Test
@@ -135,7 +136,7 @@ public class TricentisWebsiteTests {
 	}
 	
 	@Test(dataProvider = "Product and Price")
-	public void GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable(String product1,String product2,String price1,String price2,String category) {
+	public void GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable(String product1,String price1,String product2,String price2,String category) {
 		homePage.goToHomePage();
 		homePage.searchBar(product1);
 		if(category.equalsIgnoreCase("Computers")) {
@@ -160,7 +161,7 @@ public class TricentisWebsiteTests {
 	@DataProvider(name = "Product and Price")
 	public Object[][] getDataFromExcel(){
 		String excelDirectory = readExcel.getDataConfigProperties("excelDataDir");
-		Object[][] object = readExcel.getExcelData(excelDirectory + "AutomationData.xlsx","sheet1");
+		Object[][] object = readExcel.getExcelData(excelDirectory + "ComparisonData.xlsx","Products");
 		return object;
 		
 	}

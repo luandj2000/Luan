@@ -61,5 +61,8 @@ public class HomePage extends BasePage {
 		return cartAmount;
 	}
 	
+	public void goToCompareProductList() {
+		clickElement(By.cssSelector("[href='\\/compareproducts']"));
+	}
 
 }
