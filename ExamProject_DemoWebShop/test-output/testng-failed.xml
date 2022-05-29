@@ -5,7 +5,8 @@
     <classes>
       <class name="tricentisTests.TricentisWebsiteTests">
         <methods>
-          <include name="GIVEN_ShopperOnCartPage_AND_OneItemAdded_WHEN_ItemQuantityChangeToTwo_THEN_ItemQuantityDisplaysAsTwo"/>
+          <include name="testCleanup"/>
+          <include name="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable" invocation-numbers="0 1 2"/>
           <include name="clearTest"/>
         </methods>
       </class> <!-- tricentisTests.TricentisWebsiteTests -->

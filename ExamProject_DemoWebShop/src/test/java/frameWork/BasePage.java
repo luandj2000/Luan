@@ -114,11 +114,19 @@ public class BasePage {
 			
 		}
 		
-		//Check if element exists
-		public boolean elementExists(By pLocator) {
+		//Check if element is displayed
+		public boolean elementIsDisplayed(By pLocator) {
 			boolean display = getElement(pLocator).isDisplayed();
 			return display;
 		}
+		
+		// Check if elements exist.
+		public boolean elementExists(By pLocator) {
+			boolean exists = driver.findElements(pLocator).size() > 0;
+			return exists;
+		}
+		
+		
 		
 		//Get element
 		public WebElement getElement(By pLocator) {

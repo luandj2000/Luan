@@ -1,6 +1,7 @@
 package tricentisTests;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -31,6 +32,11 @@ public class TricentisWebsiteTests {
 			cartItems = homePage.cartItemsAmount();
 		}
 		
+	}
+	@AfterMethod
+	public void testCleanup() {
+		homePage.goToCompareProductList();
+		compareProductsPage.clearCompareList();
 	}
 	
 	@Test
@@ -149,20 +155,22 @@ public class TricentisWebsiteTests {
 			electPage.selectCellPhoneDisplayItem(product1);
 			manItemPage.addToCompareList();
 			homePage.searchBar(product2);
-			electPage.selectCellPhoneDisplayItem(product1);
+			electPage.selectCellPhoneDisplayItem(product2);
 			manItemPage.addToCompareList();
 		}
 		
-		Assert.assertEquals(compareProductsPage.getProductPrice(1), price1);
-		Assert.assertEquals(compareProductsPage.getProductPrice(2), price2);
+		Assert.assertEquals(compareProductsPage.getProductPrice(2), price1);
+		Assert.assertEquals(compareProductsPage.getProductPrice(1), price2);
+		//homePage.goToCompareProductList();
+		//compareProductsPage.clearCompareList();
 		
 	}
 	
 	@DataProvider(name = "Product and Price")
 	public Object[][] getDataFromExcel(){
 		String excelDirectory = readExcel.getDataConfigProperties("excelDataDir");
-		Object[][] object = readExcel.getExcelData(excelDirectory + "ComparisonData.xlsx","Products");
-		return object;
+		Object[][] arrayObject = readExcel.getExcelData(excelDirectory + "ComparisonData.xlsx","Products");
+		return arrayObject;
 		
 	}
 }
