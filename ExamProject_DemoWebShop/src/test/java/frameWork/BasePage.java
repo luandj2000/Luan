@@ -100,6 +100,12 @@ public class BasePage {
 		String elementText = getElement(pLocator).getText();
 		return elementText;
 		}
+		
+		// Get element value
+		public String getElementValue(By pLocator) {
+			String elementValue = getElement(pLocator).getAttribute("value");
+			return elementValue;
+		}
 
 		//Click element
 		public void clickElement(By pLocator) {

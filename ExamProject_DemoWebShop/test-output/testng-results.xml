@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-28T19:57:21 SAST" name="Default suite" finished-at="2022-05-28T19:57:34 SAST" duration-ms="12279">
+    <groups>
+    </groups>
+    <test started-at="2022-05-28T19:57:21 SAST" name="Default test" finished-at="2022-05-28T19:57:34 SAST" duration-ms="12279">
+      <class name="tricentisTests.TricentisWebsiteTests">
+        <test-method signature="GIVEN_OneIemAddedToCart_WHEN_NavigateToCart_AND_ShippingDetailsUnitedStatesAlaska99501Entered_AND_EstimateShippingButtonClicked_THEN_GroundEstimateZero()[pri:0, instance:tricentisTests.TricentisWebsiteTests@1dc2de84]" started-at="2022-05-28T19:57:21 SAST" name="GIVEN_OneIemAddedToCart_WHEN_NavigateToCart_AND_ShippingDetailsUnitedStatesAlaska99501Entered_AND_EstimateShippingButtonClicked_THEN_GroundEstimateZero" finished-at="2022-05-28T19:57:32 SAST" duration-ms="10305" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GIVEN_OneIemAddedToCart_WHEN_NavigateToCart_AND_ShippingDetailsUnitedStatesAlaska99501Entered_AND_EstimateShippingButtonClicked_THEN_GroundEstimateZero -->
+        <test-method is-config="true" signature="clearTest()[pri:0, instance:tricentisTests.TricentisWebsiteTests@1dc2de84]" started-at="2022-05-28T19:57:32 SAST" name="clearTest" finished-at="2022-05-28T19:57:34 SAST" duration-ms="1927" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clearTest -->
+      </class> <!-- tricentisTests.TricentisWebsiteTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

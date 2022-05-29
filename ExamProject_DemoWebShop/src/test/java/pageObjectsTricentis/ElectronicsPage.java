@@ -2,7 +2,9 @@ package pageObjectsTricentis;
 
 import org.openqa.selenium.By;
 
-public class ElectronicsPage extends HomePage {
+import frameWork.BasePage;
+
+public class ElectronicsPage extends BasePage {
 	
 	// selects a spesific electronic option (sub category)
 	public void selectElectronicDisplayOption(String electronic) {
@@ -12,4 +14,18 @@ public class ElectronicsPage extends HomePage {
 			clickElement(By.cssSelector(".sub-category-grid .item-box:nth-of-type(2) .picture a"));
 		}
 	}
+	
+	// selects a spesific cell phone option
+	public void selectCellPhoneDisplayItem(String cellPhone) {
+		if(cellPhone.equalsIgnoreCase("Smartphone")) {
+			clickElement(By.cssSelector("[data-productid='43'] .picture a"));
+		}else if(cellPhone.equalsIgnoreCase("Used phone")) {
+			clickElement(By.cssSelector("[data-productid='15'] .picture a"));
+		}else if(cellPhone.equalsIgnoreCase("Phone Cover")) {
+			clickElement(By.cssSelector("[data-productid='80'] .picture a"));
+		}
+		
+	}
+	
+	
 }
