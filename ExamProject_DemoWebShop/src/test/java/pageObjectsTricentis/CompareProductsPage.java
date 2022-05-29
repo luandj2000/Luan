@@ -21,4 +21,11 @@ public class CompareProductsPage extends BasePage {
 		}
 		return productPrice;
 	}
+	
+	public void clearCompareProducts() {
+		boolean doClear = elementExists(By.cssSelector(".clear-list"));
+		if(doClear) {
+			clickElement(By.cssSelector(".clear-list"));
+		}
+	}
 }
