@@ -19,5 +19,4 @@ public class CompareProductsPage extends BasePage {
 		
 		return productPrice;
 	}
-	
 }

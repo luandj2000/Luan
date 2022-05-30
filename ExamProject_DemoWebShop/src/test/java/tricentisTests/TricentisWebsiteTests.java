@@ -31,7 +31,7 @@ public class TricentisWebsiteTests {
 			cartPage.clearCart();
 			cartItems = homePage.cartItemsAmount();
 		}
-		
+		System.out.println("Test groups");
 	}
 	@AfterMethod
 	public void testCleanup() {
