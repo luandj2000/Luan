@@ -8,47 +8,50 @@ public class CartPage extends BasePage {
 
 	// verifies if correct item was added.
 	// note: this method only caters for one item
-	public boolean verifyAddedItem (String item) {
-		
+	public boolean verifyAddedItem(String item) {
+
 		String cartItem = getElementText(By.cssSelector(".product-name"));
 		boolean itemCorrect;
-		if(cartItem.equalsIgnoreCase(item)) {
+		if (cartItem.equalsIgnoreCase(item)) {
 			itemCorrect = true;
-		}else {
+		} else {
 			itemCorrect = false;
 		}
-		
+
 		return itemCorrect;
 	}
-	
+
+	// clears the cart page.
+	// note: only removes one item per call.
 	public void clearCart() {
-		
-		
-			clickElement(By.cssSelector("input[name='removefromcart']"));
-			//clickElement(By.cssSelector("tr:nth-of-type(" + i + ") > .remove-from-cart > input[name='removefromcart']"));
-		
+
+		clickElement(By.cssSelector("input[name='removefromcart']"));
+
 		updateCart();
 	}
-	
+
+	// this updates the cart page information with any changes.
 	public void updateCart() {
 		clickElement(By.cssSelector("input[name='updatecart']"));
 	}
-	
+
+	// changes the quantity of an item in the cart.
+	// note: only supports 1 item.
 	public void changeSingleItemQuantity(String amount) {
 		clearText(By.cssSelector(".qty-input"));
-		enterText(By.cssSelector(".qty-input"),amount);
+		enterText(By.cssSelector(".qty-input"), amount);
 		updateCart();
-		
+
 	}
-	
-	// retirves qunatity of item added to cart.
-	// note: -1 means a numberFormatException occured.
+
+	// retrieves quantity of item added to cart.
+	// note: -1 means a numberFormatException occurred.
+	// only supports 1 item.
 	public int getSingleItemQuantity() {
 		int quantity;
-		String quantityDirty= getElementValue(By.cssSelector(".qty-input"));
-		System.out.println(quantityDirty + "fail");
-		quantityDirty= quantityDirty.replaceAll("[\\D]", "");
-		
+		String quantityDirty = getElementValue(By.cssSelector(".qty-input"));
+		quantityDirty = quantityDirty.replaceAll("[\\D]", "");
+
 		try {
 			quantity = Integer.parseInt(quantityDirty);
 		} catch (NumberFormatException nfe) {
@@ -56,17 +59,19 @@ public class CartPage extends BasePage {
 		}
 		return quantity;
 	}
-	
-	public void enterShippingDetails(String country, String province,String postalCode) {
-		selectDropDown(By.cssSelector("select#CountryId"),country);
-		selectDropDown(By.cssSelector("select#StateProvinceId"),province);
-		enterText(By.cssSelector("input#ZipPostalCode"),postalCode);
+
+	// enters shipping details for an order and triggers shipping estimation.
+	public void enterShippingDetails(String country, String province, String postalCode) {
+		selectDropDown(By.cssSelector("select#CountryId"), country);
+		selectDropDown(By.cssSelector("select#StateProvinceId"), province);
+		enterText(By.cssSelector("input#ZipPostalCode"), postalCode);
 		clickElement(By.cssSelector("input[name='estimateshipping']"));
 	}
-	
+
+	// gets the ground shipping cost of an order.
 	public String getGroundShippingCost() {
 		String groundCost = getElementText(By.cssSelector("li:nth-of-type(1) > .option-name"));
 		return groundCost;
 	}
-	
+
 }

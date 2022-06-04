@@ -39,16 +39,16 @@ public class BasePage {
 				driver.get(url);
 				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			}else if (browser.equalsIgnoreCase("firefox")) {
-				
+			} else if (browser.equalsIgnoreCase("firefox")) {
+
 				WebDriverManager.firefoxdriver().setup();
 				// Firefox setup
 				driver = new FirefoxDriver();
 				driver.get(url);
 				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-			}else if (browser.equalsIgnoreCase("edge")) {
-				
+			} else if (browser.equalsIgnoreCase("edge")) {
+
 				WebDriverManager.edgedriver().setup();
 				// Edge setup
 				driver = new EdgeDriver();
@@ -76,119 +76,116 @@ public class BasePage {
 		}
 		return properties.getProperty(propertyName);
 	}
-	
-	//Wait for elements
-		public void waitForElement(int elementWait, By pLocator) {
+
+	// Wait for elements
+	public void waitForElement(int elementWait, By pLocator) {
 		WebDriverWait wait = new WebDriverWait(driver, elementWait);
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(pLocator));
-		}
-		
-		//Wait for click
-		public void waitforClick(int elementWait, By pLocator) {
+	}
+
+	// Wait for click
+	public void waitforClick(int elementWait, By pLocator) {
 		WebDriverWait wait = new WebDriverWait(driver, elementWait);
 		wait.until(ExpectedConditions.elementToBeClickable(pLocator));
-		}
-		
-		//Wait for Url
-		public void waitForUrl(int elementWait, String urlContainer) {
+	}
+
+	// Wait for Url
+	public void waitForUrl(int elementWait, String urlContainer) {
 		WebDriverWait wait = new WebDriverWait(driver, elementWait);
 		wait.until(ExpectedConditions.urlContains(urlContainer));
-		}
-		
-		//Get element text
-		public String getElementText(By pLocator) {
+	}
+
+	// Get element text
+	public String getElementText(By pLocator) {
 		String elementText = getElement(pLocator).getText();
 		return elementText;
-		}
-		
-		// Get element value
-		public String getElementValue(By pLocator) {
-			String elementValue = getElement(pLocator).getAttribute("value");
-			return elementValue;
-		}
+	}
 
-		//Click element
-		public void clickElement(By pLocator) {
-			waitforClick(30, pLocator);
-			getElement(pLocator).click();
-			
-		}
-		
-		//Check if element is displayed
-		public boolean elementIsDisplayed(By pLocator) {
-			boolean display = getElement(pLocator).isDisplayed();
-			return display;
-		}
-		
-		// Check if elements exist.
-		public boolean elementExists(By pLocator) {
-			boolean exists = driver.findElements(pLocator).size() > 0;
-			return exists;
-		}
-		
-		
-		
-		//Get element
-		public WebElement getElement(By pLocator) {
-			waitforClick(30, pLocator);
-			return driver.findElement(pLocator);
-		}
-		
-		//Clean up
-		public void cleanUp() {
-			driver.quit();
-			
-		}
-		
-		//Enter text
-		public void enterText(By pLocator, String searchText) {
-			waitforClick(30, pLocator);
-			driver.findElement(pLocator).sendKeys(searchText);
-			
-		}
-		
-		//Clear text
-		public void clearText(By pLocator) {
-			waitforClick(30, pLocator);
-			driver.findElement(pLocator).clear();
-		}
-		
-		//Select from drop-down
-		public void selectDropDown(By pLocator, String pValue) {
-			waitForElement(20,pLocator);
-			Select sDropDown = new Select(getElement(pLocator));
-			sDropDown.selectByVisibleText(pValue);
-		}
-		
-		// Switch window
-		public void switchToNewTab() {
-			Set<String> handles = driver.getWindowHandles();													
-			Iterator<String> it = handles.iterator(); 
-			String parentWindowID = it.next();
-			String childWindowID = it.next();
-			driver.switchTo().window(childWindowID);
-		}
-		
-		// Switch to parent window
-		public void switchToParent() {
-			Set<String> handles = driver.getWindowHandles();
-															
-			Iterator<String> it = handles.iterator(); 
-			String parentWindowID = it.next();
-			String childWindowID = it.next();
-			driver.switchTo().window(parentWindowID); 
-		}
-		
-		// closes child window tab
-		public void closeChildBrowserTab() {
-			Set<String> handles = driver.getWindowHandles();
-			Iterator<String> it = handles.iterator();		
-			String parentWindowID = it.next();				
-			String childWindowID = it.next();
-			driver.switchTo().window(childWindowID);
-			driver.close();
-			driver.switchTo().window(parentWindowID);
-		}
-		
-		
+	// Get element value
+	public String getElementValue(By pLocator) {
+		String elementValue = getElement(pLocator).getAttribute("value");
+		return elementValue;
+	}
+
+	// Click element
+	public void clickElement(By pLocator) {
+		waitforClick(30, pLocator);
+		getElement(pLocator).click();
+
+	}
+
+	// Check if element is displayed
+	public boolean elementIsDisplayed(By pLocator) {
+		boolean display = getElement(pLocator).isDisplayed();
+		return display;
+	}
+
+	// Check if elements exist.
+	public boolean elementExists(By pLocator) {
+		boolean exists = driver.findElements(pLocator).size() > 0;
+		return exists;
+	}
+
+	// Get element
+	public WebElement getElement(By pLocator) {
+		waitforClick(30, pLocator);
+		return driver.findElement(pLocator);
+	}
+
+	// Clean up
+	public void cleanUp() {
+		driver.quit();
+
+	}
+
+	// Enter text
+	public void enterText(By pLocator, String searchText) {
+		waitforClick(30, pLocator);
+		driver.findElement(pLocator).sendKeys(searchText);
+
+	}
+
+	// Clear text
+	public void clearText(By pLocator) {
+		waitforClick(30, pLocator);
+		driver.findElement(pLocator).clear();
+	}
+
+	// Select from drop-down
+	public void selectDropDown(By pLocator, String pValue) {
+		waitForElement(20, pLocator);
+		Select sDropDown = new Select(getElement(pLocator));
+		sDropDown.selectByVisibleText(pValue);
+	}
+
+	// Switch window
+	public void switchToNewTab() {
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();
+		String parentWindowID = it.next();
+		String childWindowID = it.next();
+		driver.switchTo().window(childWindowID);
+	}
+
+	// Switch to parent window
+	public void switchToParent() {
+		Set<String> handles = driver.getWindowHandles();
+
+		Iterator<String> it = handles.iterator();
+		String parentWindowID = it.next();
+		String childWindowID = it.next();
+		driver.switchTo().window(parentWindowID);
+	}
+
+	// closes child window tab
+	public void closeChildBrowserTab() {
+		Set<String> handles = driver.getWindowHandles();
+		Iterator<String> it = handles.iterator();
+		String parentWindowID = it.next();
+		String childWindowID = it.next();
+		driver.switchTo().window(childWindowID);
+		driver.close();
+		driver.switchTo().window(parentWindowID);
+	}
+
 }

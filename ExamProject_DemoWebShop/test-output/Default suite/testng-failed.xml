@@ -6,8 +6,10 @@
       <class name="tricentisTests.TricentisWebsiteTests">
         <methods>
           <include name="testCleanup"/>
-          <include name="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable" invocation-numbers="0 1 2"/>
+          <include name="GIVEN_ShopperOnCartPage_AND_OneItemAdded_WHEN_RemoveChecked_AND_UpdateShoppingCartClicked_THEN_ItemRemovedFromCart"/>
           <include name="clearTest"/>
+          <include name="GIVEN_ShopperOnHomePage_WHEN_TopMenuBarUsed_AND_Electronics_OptionCellPhones_ItemSmartPhoneSelected_AND_ItemAddedToCart_THEN_SmartPhoneDisplaysOnCartPage"/>
+          <include name="GIVEN_ShopperOnHomePage_WHEN_CategoriesNavigationUsed_AND_Computers_OptionDesktops_ItemSimpleComputerSelected_AND_ItemAddedToCart_THEN_SimpleComputerDisplaysOnCartPage"/>
         </methods>
       </class> <!-- tricentisTests.TricentisWebsiteTests -->
     </classes>

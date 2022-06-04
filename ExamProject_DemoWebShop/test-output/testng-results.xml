@@ -1,125 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="8" passed="3" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-29T23:35:56 SAST" name="Default suite" finished-at="2022-05-29T23:36:19 SAST" duration-ms="23353">
+  <suite started-at="2022-06-02T14:50:32 SAST" name="Default suite" finished-at="2022-06-02T14:50:39 SAST" duration-ms="7663">
     <groups>
-      <group name="CompareProducts">
-        <method signature="TricentisWebsiteTests.GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tricentisTests.TricentisWebsiteTests@54dcbb9f]" name="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable" class="tricentisTests.TricentisWebsiteTests"/>
-      </group> <!-- CompareProducts -->
     </groups>
-    <test started-at="2022-05-29T23:35:56 SAST" name="Default test" finished-at="2022-05-29T23:36:19 SAST" duration-ms="23353">
-      <class name="tricentisTests.TricentisWebsiteTests">
-        <test-method signature="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tricentisTests.TricentisWebsiteTests@54dcbb9f]" started-at="2022-05-29T23:35:56 SAST" name="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable" data-provider="Product and Price" finished-at="2022-05-29T23:36:03 SAST" duration-ms="6409" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Build your own cheap computer]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[800.00]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Build your own computer]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1200.00]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Computers]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2022-06-02T14:50:32 SAST" name="Default test" finished-at="2022-06-02T14:50:39 SAST" duration-ms="7663">
+      <class name="tricentisTests.TricentisWebsiteCartTests">
+        <test-method signature="GIVEN_ShopperOnHomePage_WHEN_TopMenuBarUsed_AND_Electronics_OptionCellPhones_ItemSmartPhoneSelected_AND_ItemAddedToCart_THEN_SmartPhoneDisplaysOnCartPage()[pri:0, instance:tricentisTests.TricentisWebsiteCartTests@7965a51c]" started-at="2022-06-02T14:50:32 SAST" name="GIVEN_ShopperOnHomePage_WHEN_TopMenuBarUsed_AND_Electronics_OptionCellPhones_ItemSmartPhoneSelected_AND_ItemAddedToCart_THEN_SmartPhoneDisplaysOnCartPage" finished-at="2022-06-02T14:50:38 SAST" duration-ms="6188" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable -->
-        <test-method is-config="true" signature="testCleanup()[pri:0, instance:tricentisTests.TricentisWebsiteTests@54dcbb9f]" started-at="2022-05-29T23:36:03 SAST" name="testCleanup" finished-at="2022-05-29T23:36:04 SAST" duration-ms="1187" status="PASS">
+        </test-method> <!-- GIVEN_ShopperOnHomePage_WHEN_TopMenuBarUsed_AND_Electronics_OptionCellPhones_ItemSmartPhoneSelected_AND_ItemAddedToCart_THEN_SmartPhoneDisplaysOnCartPage -->
+        <test-method is-config="true" signature="testCleanup()[pri:0, instance:tricentisTests.TricentisWebsiteCartTests@7965a51c]" started-at="2022-06-02T14:50:38 SAST" name="testCleanup" finished-at="2022-06-02T14:50:39 SAST" duration-ms="1436" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCleanup -->
-        <test-method signature="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tricentisTests.TricentisWebsiteTests@54dcbb9f]" started-at="2022-05-29T23:36:04 SAST" name="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable" data-provider="Product and Price" finished-at="2022-05-29T23:36:10 SAST" duration-ms="5948" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Desktop PC with CDRW]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[500.00]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Elite Desktop PC]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[1350.00]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Computers]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable -->
-        <test-method is-config="true" signature="testCleanup()[pri:0, instance:tricentisTests.TricentisWebsiteTests@54dcbb9f]" started-at="2022-05-29T23:36:10 SAST" name="testCleanup" finished-at="2022-05-29T23:36:11 SAST" duration-ms="1227" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCleanup -->
-        <test-method signature="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:tricentisTests.TricentisWebsiteTests@54dcbb9f]" started-at="2022-05-29T23:36:11 SAST" name="GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable" data-provider="Product and Price" finished-at="2022-05-29T23:36:17 SAST" duration-ms="5836" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Smartphone]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[100.00]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Used phone]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5.00]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Electronics]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable -->
-        <test-method is-config="true" signature="testCleanup()[pri:0, instance:tricentisTests.TricentisWebsiteTests@54dcbb9f]" started-at="2022-05-29T23:36:17 SAST" name="testCleanup" finished-at="2022-05-29T23:36:18 SAST" duration-ms="1371" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCleanup -->
-        <test-method is-config="true" signature="clearTest()[pri:0, instance:tricentisTests.TricentisWebsiteTests@54dcbb9f]" started-at="2022-05-29T23:36:18 SAST" name="clearTest" depends-on-groups="Cart" finished-at="2022-05-29T23:36:19 SAST" duration-ms="660" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearTest -->
-      </class> <!-- tricentisTests.TricentisWebsiteTests -->
+      </class> <!-- tricentisTests.TricentisWebsiteCartTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

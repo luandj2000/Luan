@@ -22,19 +22,21 @@ public class TestListeners extends BasePage implements ITestListener {
 		// when this method is triggered take a screen shot
 		try {
 			util.takeSnapShot("On test Success" + util.timereturn() + ".png");
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 	// when this method is triggered take a screen shot
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		ITestListener.super.onTestFailure(result);
 		try {
 			util.takeSnapShot("On test Failure" + util.timereturn() + ".png");
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 
 	public void onTestSkipped(ITestResult result) {
