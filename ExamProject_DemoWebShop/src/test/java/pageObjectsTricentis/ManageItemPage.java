@@ -17,9 +17,10 @@ public class ManageItemPage extends BasePage {
 
 	}
 
-	// removes the interfering cart notification when an product is added.
+	// removes the interfering cart notification when a product is added.
 	public void removeCartNotification() {
 		clickElement(By.cssSelector("div#bar-notification > span[title='Close']"));
+		waitTilElementNotVisible(5, By.cssSelector("div#bar-notification > span[title='Close']"));
 	}
 
 	// adds a product to the compare list.

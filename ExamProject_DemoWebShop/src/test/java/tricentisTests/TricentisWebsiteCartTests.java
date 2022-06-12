@@ -19,6 +19,7 @@ public class TricentisWebsiteCartTests {
 	ManageItemPage manItemPage = new ManageItemPage();
 	CompareProductsPage compareProductsPage = new CompareProductsPage();
 
+	// cleans cart from all items.
 	@AfterMethod
 	public void testCleanup() {
 		int cartItems = homePage.cartItemsAmount();
@@ -29,13 +30,14 @@ public class TricentisWebsiteCartTests {
 		}
 	}
 
+	// user story 1: search using the top menu bar
 	@Test
 	public void GIVEN_ShopperOnHomePage_WHEN_TopMenuBarUsed_AND_Electronics_OptionCellPhones_ItemSmartPhoneSelected_AND_ItemAddedToCart_THEN_SmartPhoneDisplaysOnCartPage() {
 		String menuBarOption = "ELECTRONICS";
 		String electOption = "Cell phones";
 		String cellPhoneItem = "Smartphone";
 		boolean verifyCartItem;
-		
+
 		homePage.goToHomePage();
 		homePage.searchByTopMenuBarItem(menuBarOption);
 		electPage.selectElectronicDisplayOption(electOption);
@@ -43,12 +45,13 @@ public class TricentisWebsiteCartTests {
 		manItemPage.addToCart();
 		manItemPage.removeCartNotification();
 		homePage.goToCart();
-		
+
 		verifyCartItem = cartPage.verifyAddedItem(cellPhoneItem);
 		Assert.assertEquals(true, verifyCartItem);
 
 	}
 
+	// user story 2: browse using the categories list.
 	@Test
 	public void GIVEN_ShopperOnHomePage_WHEN_CategoriesNavigationUsed_AND_Computers_OptionDesktops_ItemSimpleComputerSelected_AND_ItemAddedToCart_THEN_SimpleComputerDisplaysOnCartPage() {
 		String categoryOption = "Computers";
@@ -69,6 +72,7 @@ public class TricentisWebsiteCartTests {
 		Assert.assertEquals(true, verifyCartItem);
 	}
 
+	// user story 3: go to cart and update quantity.
 	@Test
 	public void GIVEN_ShopperOnCartPage_AND_OneItemAdded_WHEN_ItemQuantityChangeToTwo_THEN_ItemQuantityDisplaysAsTwo() {
 		String menuBarOption = "ELECTRONICS";
@@ -84,12 +88,13 @@ public class TricentisWebsiteCartTests {
 		manItemPage.removeCartNotification();
 		homePage.goToCart();
 		cartPage.changeSingleItemQuantity(quantityExpected + "");
-		
+
 		quantityActual = cartPage.getSingleItemQuantity();
 		Assert.assertEquals(quantityActual, quantityExpected);
 
 	}
 
+	// user story 4: remove item from cart.
 	@Test
 	public void GIVEN_ShopperOnCartPage_AND_OneItemAdded_WHEN_RemoveChecked_AND_UpdateShoppingCartClicked_THEN_ItemRemovedFromCart() {
 		String categoryOption = "Computers";
@@ -104,11 +109,12 @@ public class TricentisWebsiteCartTests {
 		manItemPage.removeCartNotification();
 		homePage.goToCart();
 		cartPage.clearCart();
-		
+
 		Assert.assertEquals(homePage.cartItemsAmount(), 0);
 
 	}
 
+	// user story 5: estimate shipping.
 	@Test
 	public void GIVEN_OneItemAddedToCart_WHEN_NavigateToCart_AND_ShippingDetailsUnitedStatesAlaska99501Entered_AND_EstimateShippingButtonClicked_THEN_GroundEstimateZero() {
 		String menuBarOption = "ELECTRONICS";
@@ -126,6 +132,7 @@ public class TricentisWebsiteCartTests {
 		homePage.goToCart();
 		cartPage.enterShippingDetails(country, province, postalCode);
 		
+		cartPage.scrollToShippingDetails();
 		Assert.assertEquals(cartPage.getGroundShippingCost(), "Ground (0.00)");
 
 	}

@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,6 +28,7 @@ public class BasePage {
 
 	public BasePage() {
 
+		// driver startup and setup.
 		if (driver == null) {
 
 			String browser = getDataConfigProperties("browser");
@@ -120,6 +122,12 @@ public class BasePage {
 		return display;
 	}
 
+	// wait till element is not visible
+	public void waitTilElementNotVisible(int elementWait, By pLocator) {
+		WebDriverWait wait = new WebDriverWait(driver, elementWait);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(pLocator));
+	}
+
 	// Check if elements exist.
 	public boolean elementExists(By pLocator) {
 		boolean exists = driver.findElements(pLocator).size() > 0;
@@ -186,6 +194,12 @@ public class BasePage {
 		driver.switchTo().window(childWindowID);
 		driver.close();
 		driver.switchTo().window(parentWindowID);
+	}
+	
+	// scroll to a specific element.
+	public void scrollToElement(By pLocator) {
+		WebElement element = driver.findElement(pLocator);
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 }

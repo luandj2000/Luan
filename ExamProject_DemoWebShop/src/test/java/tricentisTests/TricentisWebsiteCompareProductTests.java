@@ -21,6 +21,7 @@ public class TricentisWebsiteCompareProductTests {
 	CompareProductsPage compareProductsPage = new CompareProductsPage();
 	ReadExcel readExcel = new ReadExcel();
 
+	// clears all products in the compare list.
 	@AfterMethod
 	public void testCleanup() {
 
@@ -28,6 +29,8 @@ public class TricentisWebsiteCompareProductTests {
 		compareProductsPage.clearCompareList();
 	}
 
+	// user story 6: add to your compare list.
+	// makes use of an excel file called ComparisonData.xlsx
 	@Test(dataProvider = "Product and Price")
 	public void GIVEN_TwoItemsSelected_WHEN_SelectedItemsAddedToCompareList_THEN_SelectedItemsWithPricesDisplayOnComparisonTable(
 			String product1, String price1, String product2, String price2, String category) {
@@ -52,6 +55,7 @@ public class TricentisWebsiteCompareProductTests {
 
 	}
 
+	// pulls test data from Excel file called ComparisonData.xlsx.
 	@DataProvider(name = "Product and Price")
 	public Object[][] getDataFromExcel() {
 		String excelDirectory = readExcel.getDataConfigProperties("excelDataDir");

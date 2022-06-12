@@ -73,5 +73,13 @@ public class CartPage extends BasePage {
 		String groundCost = getElementText(By.cssSelector("li:nth-of-type(1) > .option-name"));
 		return groundCost;
 	}
+	
+	public void scrollToShippingDetails() {
+		try {
+		scrollToElement(By.cssSelector("h1"));
+		}catch(Exception ex) {
+			System.out.println("Scrolling failed.");
+		}
+	}
 
 }

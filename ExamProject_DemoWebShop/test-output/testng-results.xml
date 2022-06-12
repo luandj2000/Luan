@@ -2,16 +2,16 @@
 <testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-02T14:50:32 SAST" name="Default suite" finished-at="2022-06-02T14:50:39 SAST" duration-ms="7663">
+  <suite started-at="2022-06-10T07:16:27 SAST" name="Default suite" finished-at="2022-06-10T07:16:41 SAST" duration-ms="14747">
     <groups>
     </groups>
-    <test started-at="2022-06-02T14:50:32 SAST" name="Default test" finished-at="2022-06-02T14:50:39 SAST" duration-ms="7663">
+    <test started-at="2022-06-10T07:16:27 SAST" name="Default test" finished-at="2022-06-10T07:16:41 SAST" duration-ms="14747">
       <class name="tricentisTests.TricentisWebsiteCartTests">
-        <test-method signature="GIVEN_ShopperOnHomePage_WHEN_TopMenuBarUsed_AND_Electronics_OptionCellPhones_ItemSmartPhoneSelected_AND_ItemAddedToCart_THEN_SmartPhoneDisplaysOnCartPage()[pri:0, instance:tricentisTests.TricentisWebsiteCartTests@7965a51c]" started-at="2022-06-02T14:50:32 SAST" name="GIVEN_ShopperOnHomePage_WHEN_TopMenuBarUsed_AND_Electronics_OptionCellPhones_ItemSmartPhoneSelected_AND_ItemAddedToCart_THEN_SmartPhoneDisplaysOnCartPage" finished-at="2022-06-02T14:50:38 SAST" duration-ms="6188" status="PASS">
+        <test-method signature="GIVEN_OneItemAddedToCart_WHEN_NavigateToCart_AND_ShippingDetailsUnitedStatesAlaska99501Entered_AND_EstimateShippingButtonClicked_THEN_GroundEstimateZero()[pri:0, instance:tricentisTests.TricentisWebsiteCartTests@389562d6]" started-at="2022-06-10T07:16:27 SAST" name="GIVEN_OneItemAddedToCart_WHEN_NavigateToCart_AND_ShippingDetailsUnitedStatesAlaska99501Entered_AND_EstimateShippingButtonClicked_THEN_GroundEstimateZero" finished-at="2022-06-10T07:16:40 SAST" duration-ms="13309" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GIVEN_ShopperOnHomePage_WHEN_TopMenuBarUsed_AND_Electronics_OptionCellPhones_ItemSmartPhoneSelected_AND_ItemAddedToCart_THEN_SmartPhoneDisplaysOnCartPage -->
-        <test-method is-config="true" signature="testCleanup()[pri:0, instance:tricentisTests.TricentisWebsiteCartTests@7965a51c]" started-at="2022-06-02T14:50:38 SAST" name="testCleanup" finished-at="2022-06-02T14:50:39 SAST" duration-ms="1436" status="PASS">
+        </test-method> <!-- GIVEN_OneItemAddedToCart_WHEN_NavigateToCart_AND_ShippingDetailsUnitedStatesAlaska99501Entered_AND_EstimateShippingButtonClicked_THEN_GroundEstimateZero -->
+        <test-method is-config="true" signature="testCleanup()[pri:0, instance:tricentisTests.TricentisWebsiteCartTests@389562d6]" started-at="2022-06-10T07:16:40 SAST" name="testCleanup" finished-at="2022-06-10T07:16:41 SAST" duration-ms="1394" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCleanup -->
