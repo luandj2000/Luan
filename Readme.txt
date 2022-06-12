@@ -6,3 +6,9 @@ From	C:\\InspiredExam\\LuanExamProject\\
 To	C:\\LuanExamProject\\ 
 Alternatively	Add the directory:  InspiredExam on your c drive and clone the project to that directory.
 
+
+Running automation tests:
+
+There are no spesific profiles for this project, only a default one.
+Therefore the standard command can be used to run the project's tests:  mvn test
+
